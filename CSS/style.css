@@ -1,19 +1,24 @@
 body{
-    background-color: #535354;
+    background-color: rgb(232, 235, 233);
     overflow-x: hidden;
+}
+
+h1{
+  padding-top: 5%;
+  color: rgb(60, 60, 60);
 }
 
 /* header */
 
 .colornuevo {
-    background-color: #535354;
+  background-color: rgb(48, 89, 79);
   }
 
   .cabecera {
     justify-content: flex-end;
     background-color: transparent;
     font-size: large;
-    color: white;
+    color: rgb(232, 235, 233);
   }
 
   .botoncabecera {
@@ -50,20 +55,20 @@ body{
   .footerText {
     text-decoration: none;
     background-color: rgb(48, 89, 79);
-    color: hsl(0, 1%, 71%);
+    color: rgb(232, 235, 233);
     text-align: center;
     transition: all 0.5s;
   }
   
   .footerText:hover {
     transform: scale(1.1);
-    color: white;
+    color:rgb(232, 235, 233);
   }
   
   footer {
     margin-top: 20px;
     background-color: rgb(48, 89, 79);
-    color: hsl(0, 1%, 71%);
+    color: rgb(232, 235, 233);
     text-align: center;
   }
   
@@ -78,4 +83,19 @@ body{
 
   .ppo {
     font-size: 10px;
+  }
+
+  .servicesInd{
+    padding: 5%;
+    text-align: center;
+  }
+  .servicesInd h2{
+    color: rgb(60, 60, 60);
+  }
+
+  .servicesInd li{
+    color: rgb(48, 89, 79);
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: bold;
   }
