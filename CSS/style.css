@@ -167,3 +167,45 @@ body {
             font-size: 24px;
             margin-bottom: 20px;
         }
+
+  /* Noticias */
+
+  .carousel-container {
+    width: 50%;
+    margin: 0 auto;
+    overflow: hidden; 
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    width: 100%; 
+}
+
+.carousel img {
+    width: 100%; 
+    flex-shrink: 0; 
+    border-radius: 10px;
+}
+
+.carousel-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.carousel-buttons button {
+    padding: 10px 20px;
+    background-color: #2b5444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.carousel-buttons button:hover {
+    background-color: #24683d;
+}
