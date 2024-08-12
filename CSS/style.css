@@ -209,3 +209,13 @@ body {
 .carousel-buttons button:hover {
     background-color: #24683d;
 }
+
+.contenedor-carousel{
+  width: 50%;
+  height: 10%;
+    margin: 0 auto;
+    overflow: hidden; 
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
