@@ -1,4 +1,4 @@
-import {createPool} from  'mysql2/promise'; // Import the createPool function from the mysql2/promise module
+import {createPool} from  'mysql2/promise';
 export const pool = createPool({
     host: 'localhost',
     port: 3000,

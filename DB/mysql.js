@@ -1,4 +1,4 @@
-import {pool} from '../DB/connectionDB.js'
+import {pool} from './connectionDB.js'
 
 const consulta = async () =>{
     try {

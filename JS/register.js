@@ -1,20 +1,26 @@
-// registro.js
-document.getElementById('registroForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+// registro.js (en el servidor)
+const express = require('express');
+const router = express.Router();
+const pool = require('../DB/connectionDB'); // Asegúrate de que este sea el archivo correcto donde configuras el pool
 
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
+router.post('/', async (req, res) => {
+    const { username, email, password } = req.body;
 
-    if (password !== confirmPassword) {
-        alert('Las contraseñas no coinciden. Por favor, verifica e inténtalo nuevamente.');
-        return;
+    try {
+        const [existingUser] = await pool.query('SELECT * FROM users WHERE username = ? OR email = ?', [username, email]);
+
+        if (existingUser.length > 0) {
+            // Usuario o correo ya existe
+            res.status(409).json({ message: 'El usuario o el correo ya existen' });
+        } else {
+            // Registrar nuevo usuario
+            await pool.query('INSERT INTO users (username, email, password) VALUES (?, ?, ?)', [username, email, password]);
+            res.status(201).json({ message: 'Usuario registrado con éxito' });
+        }
+    } catch (error) {
+        console.error('Error en el registro:', error);
+        res.status(500).json({ message: 'Error interno del servidor' });
     }
-
-    // Aquí iría la lógica para enviar los datos al servidor
-    console.log('Formulario enviado:', { username, email, password });
-
-    // Resetear el formulario después de enviarlo
-    document.getElementById('registroForm').reset();
 });
+
+module.exports = router;
